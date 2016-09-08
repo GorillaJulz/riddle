@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <title>NodeJS Starter Application</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <title>IBM</title>
+
+    <!-- Bootstrap -->
+  	<link href="lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  	<link href="lib/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
   </head>
+  <body ng-app="riddle">
 
-  <body>
-    <table>
-      <tr>
-        <td style= "width:30%;">
-          <img class = "newappIcon" src="images/newapp-icon.png">
-        <td>
-            <h1>Hi there!</h1>
-          <p>Thanks for creating a
-            <span class = "blue">NodeJS Starter Application</span>.
-            To get started see the Start Coding guide under your app in your dashboard.
-    </table>
+    <noscript> Bitte aktivieren Sie JavaScript</noscript>
+    <div ui-view><!--Content here --></div>
+
+
+    <script src="lib/angularJs/angular.js" charset="utf-8"></script>
+    <script src="lib/angularJs/angular-ui-router.js" charset="utf-8"></script>
+
+    <script src="module.js" charset="utf-8"></script>
+
+    <script src="core/module.js" charset="utf-8"></script>
+    <script src="core/router.js" charset="utf-8"></script>
+
+    <script src="components/home/module.js" charset="utf-8"></script>
+    <script src="components/home/router.js" charset="utf-8"></script>
+    <script src="components/home/ctrl.js" charset="utf-8"></script>
+
+    <script src="components/structure/module.js" charset="utf-8"></script>
+    <script src="components/structure/router.js" charset="utf-8"></script>
+    <script src="components/structure/ctrl.js" charset="utf-8"></script>
   </body>
-
 </html>
