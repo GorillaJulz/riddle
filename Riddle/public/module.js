@@ -2,7 +2,8 @@
   angular.module('riddle',[
 
     'riddle.core',
-    'riddle.structure'
+    'riddle.structure',
+    'riddle.content'
 
 
   ]);
