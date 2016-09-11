@@ -1,7 +1,8 @@
 (function () {
   angular.module('riddle.core',[
 
-    'ui.router'
+    'ui.router',
+    'ui.router.stateHelper'
 
   ]);
 })();

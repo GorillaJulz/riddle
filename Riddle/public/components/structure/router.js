@@ -1,15 +1,33 @@
 (function () {
   angular
       .module('riddle.structure')
-      .config(function ($stateProvider) {
+      .config(function ($stateProvider, stateHelperProvider) {
 
           $stateProvider
 
-          .state('struct', {
+            .state('struct', {
               url: '/struct',
-              templateUrl: 'components/structure/structure.html',
-              controller: 'struct.ctrl',
-              controllerAs: 'struct'
-          });
+              templateUrl: 'components/structure/structure.html'
+            })
+
+            .state('struct.content', {
+              views:{
+                "content":{
+                  templateUrl: 'components/content/content.html'
+                }
+              }
+            });
+
+            // stateHelperProvider.setNestedState({
+            //   name: 'struct',
+            //   templateUrl: 'components/structure/structure.html',
+            //   children:[
+            //     {
+            //       name:'content',
+            //       templateUrl: 'components/content/content.html',
+            //     }
+            //   ]
+            // });
       });
+
 })();

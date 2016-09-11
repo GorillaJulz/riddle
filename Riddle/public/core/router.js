@@ -3,7 +3,7 @@
         .module('riddle.core')
         .config(function($urlRouterProvider, $stateProvider){
 
-            $urlRouterProvider
+         $urlRouterProvider
 
                 .otherwise('/struct');
 

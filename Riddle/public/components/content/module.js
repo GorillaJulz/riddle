@@ -1,3 +1,5 @@
 (function () {
-  angular.module('riddle.content',[]);
+  angular.module('riddle.content',[
+      'ui.router',
+  ]);
 })();
