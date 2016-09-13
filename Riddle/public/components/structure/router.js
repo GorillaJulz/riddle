@@ -7,16 +7,24 @@
 
             .state('struct', {
               url: '/struct',
-              templateUrl: 'components/structure/structure.html'
-            })
-
-            .state('struct.content', {
+              templateUrl: 'components/structure/structure.html',
               views:{
-                "content":{
+                '': {
+                  templateUrl: 'components/structure/structure.html'
+                },
+                'content@struct':{
                   templateUrl: 'components/content/content.html'
                 }
               }
             });
+            //
+            // .state('struct.content', {
+            //   views:{
+            //     "content":{
+            //       templateUrl: 'components/content/content.html'
+            //     }
+            //   }
+            // });
 
             // stateHelperProvider.setNestedState({
             //   name: 'struct',

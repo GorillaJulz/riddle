@@ -3,7 +3,9 @@
 
     'riddle.core',
     'riddle.structure',
-    'riddle.content'
+    'riddle.content',
+    'gm.dragDrop'
+
 
 
   ]);

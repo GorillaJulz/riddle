@@ -2,7 +2,7 @@
   angular.module('riddle.core',[
 
     'ui.router',
-    'ui.router.stateHelper'
+    'ui.router.stateHelper',
 
   ]);
 })();
