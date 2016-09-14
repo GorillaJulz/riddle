@@ -3,8 +3,8 @@
 
     'riddle.core',
     'riddle.structure',
-    'riddle.content',
-    'gm.dragDrop'
+    'riddle.content'
+
 
 
 
