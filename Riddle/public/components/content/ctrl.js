@@ -3,8 +3,9 @@
        .module('riddle.content')
        .controller('cont.ctrl').run(run);
 
-       function run($rootScope) {
-         $rootScope.categories = [
+       function run() {
+         var cont = this;
+         cont.categories = [
          {
            items: [
              { name: "Omnibus" ,
@@ -19,7 +20,7 @@
            ]
          }
        ];
-        $rootScope.categories2 = [
+        cont.categories2 = [
          {
            items: [
 
@@ -27,26 +28,26 @@
          }
        ];
 
-    $rootScope.onHover = function(item) {
+    cont.onHover = function(item) {
       return function(dragItem, mouseEvent) {
         if(item != dragItem)
           dragItem.order = item.order + ((mouseEvent.movementY || -1) > 0 ? 0.5 : -0.5);
       }
     }
 
-    $rootScope.reorder = function reorder() {
+    cont.reorder = function reorder() {
 			var _orderedItems = $filter('orderBy')($rootScope.orderedItems, 'order');
 			for(var i = 0; i < _orderedItems.length; i++) {
 				_orderedItems[i].number = _orderedItems[i].order = i + 1;
 			}
 		}
 
-		$rootScope.reset = function reset(droppedItem) {
+		cont.reset = function reset(droppedItem) {
 			droppedItem.order = droppedItem.number;
 		}
 
 
-    $rootScope.getDropHandler = function(category) {
+    cont.getDropHandler = function(category) {
       return function(dragOb) {
         if(category.items.indexOf(dragOb.item) < 0) {
           dragOb.category.items.splice(dragOb.category.items.indexOf(dragOb.item), 1);
