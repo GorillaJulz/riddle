@@ -1,9 +1,9 @@
  (function () {
    angular
        .module('riddle.content')
-       .controller('cont.ctrl').run(run);
+       .controller('cont.ctrl', contCtrl);
 
-       function run() {
+       function contCtrl() {
          var cont = this;
          cont.categories = [
          {

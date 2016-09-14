@@ -13,7 +13,9 @@
                   templateUrl: 'components/structure/structure.html'
                 },
                 'content@struct':{
-                  templateUrl: 'components/content/content.html'
+                  templateUrl: 'components/content/content.html',
+                  controller: 'cont.ctrl',
+                  controllerAs: 'cont'
                 }
               }
             });
