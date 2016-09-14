@@ -35,14 +35,14 @@
       }
     }
 
-    cont.reorder = function reorder() {
-			var _orderedItems = $filter('orderBy')($rootScope.orderedItems, 'order');
+    cont.reorder = function() {
+			var _orderedItems = $filter('orderBy')(cont.orderedItems, 'order');
 			for(var i = 0; i < _orderedItems.length; i++) {
 				_orderedItems[i].number = _orderedItems[i].order = i + 1;
 			}
 		}
 
-		cont.reset = function reset(droppedItem) {
+		cont.reset = function(droppedItem) {
 			droppedItem.order = droppedItem.number;
 		}
 
