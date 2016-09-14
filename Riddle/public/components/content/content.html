@@ -1,12 +1,12 @@
 <div class='container'>
 
-    <div class='panel panel-default' ng-repeat='category in categories' gm-on-drop='getDropHandler(category)'>
+    <div class='panel panel-default' ng-repeat='category in cont.categories' gm-on-drop='cont.getDropHandler(category)'>
         <div class='panel-heading'>
             <span class='panel-title'>Microservices</span>
         </div>
         <div class="row" style='height:65px'>
             <div class="col-md-12">
-                <div class="col-md-3 " ng-repeat='item in category.items'>
+                <div class="col-md-3 " ng-repeat='item in cont.category.items'>
                     <span ng-style="{width: 100+'%'}" style=" margin:10px" class="btn btn-info btn-lg " gm-draggable='{ category: category, item: item }'>
              {{item.name}}
            </span>
@@ -34,13 +34,13 @@
         </div>
 
         <div class="col-md-8 ">
-            <div class='panel panel-default' ng-repeat='category in categories2' gm-on-drop='getDropHandler(category)'>
+            <div class='panel panel-default' ng-repeat='category in cont.categories2' gm-on-drop='cont.getDropHandler(category)'>
                 <div class='panel-heading'>
                     <span class='panel-title'>The Bus</span>
                 </div>
                 <div class="row " style='height:65px'>
                     <div class="col-md-12 ">
-                        <div class="col-md-3 " ng-repeat="item in category.items ">
+                        <div class="col-md-3 " ng-repeat="item in cont.category.items ">
 
                             <span ng-style="{width: 100+ '%'} " style=" margin:10px " class="btn btn-info btn-lg " gm-draggable='{ category: category, item: item }'>
                       {{item.name}}
