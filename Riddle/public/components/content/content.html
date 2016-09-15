@@ -6,8 +6,8 @@
         </div>
         <div class="row" style='height:65px'>
             <div class="col-md-12">
-                <div class="col-md-3 " ng-repeat='item in cont.category.items'>
-                    <span ng-style="{width: 100+'%'}" style=" margin:10px" class="btn btn-info btn-lg " gm-draggable='{ category: cont.category, item: item }'>
+                <div class="col-md-3 " ng-repeat='item in category.items'>
+                    <span ng-style="{width: 100+'%'}" style=" margin:10px" class="btn btn-info btn-lg " gm-draggable='{ category: category, item: item }'>
              {{item.name}}
            </span>
                 </div>
@@ -18,45 +18,58 @@
 
 
 
+
+
+
+
     <div class="row">
+        <div class="col-xs-12">
+
+            <svg width="100%" height="2" style="position: absolute; z-index: 1; top: 80px;">
+  <line id="line1" stroke="#5184AF" stroke-width="20" stroke-linecap="round" stroke-dasharray="1, 30"/>
 
 
+        </svg>
+            <div class="row">
 
-
-
-
-        <div class="col-md-2">
-            <div class="btn btn-danger" style="width: 100%; height: 110px;">
-                Gateway
-            </div>
-
-
-        </div>
-
-        <div class="col-md-8 ">
-            <div class='panel panel-default' ng-repeat='category in cont.categories2' gm-on-drop='cont.getDropHandler(category)'>
-                <div class='panel-heading'>
-                    <span class='panel-title'>The Bus</span>
-                </div>
-                <div class="row " style='height:65px'>
-                    <div class="col-md-12 ">
-                        <div class="col-md-3 " ng-repeat="item in cont.category.items ">
-
-                            <span ng-style="{width: 100+ '%'} " style=" margin:10px " class="btn btn-info btn-lg " gm-draggable='{ category: cont.category, item: item }'>
-                      {{item.name}}
-                    </span>
-                        </div>
+                <div class="col-md-2" style=" z-index:3;">
+                    <div id="gate" class="btn btn-danger" style="width: 100%; height: 110px;">
+                        Gateway
                     </div>
 
+
                 </div>
 
+                <div class="col-md-8 ">
+                    <div class='panel panel-default' ng-repeat='category in cont.categories2' gm-on-drop='cont.getDropHandler(category)'>
+                        <div class='panel-heading'>
+                            <span class='panel-title'>The Bus</span>
+                        </div>
+                        <div class="row " style='height:65px'>
+                            <div class="col-md-12 ">
+                                <div class="col-md-3 " ng-repeat="item in category.items " style="z-index:3;">
+
+                                    <span ng-style="{width: 100+ '%'} " style=" margin:10px " class="btn btn-info btn-lg " gm-draggable='{ category: category, item: item }'>
+                            {{item.name}}
+                          </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div id="wsk" class="col-md-2 " style=" z-index:3;">
+                    <div class="btn btn-danger" style="width: 100%; height: 110px;">
+                        Whysk
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="col-md-2 ">
-            <div class="btn btn-danger" style="width: 100%; height: 110px;">
-                Whysk
-            </div>
-        </div>
-
     </div>
+
+
+
+
+    <script>
+    </script>

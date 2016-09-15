@@ -14,7 +14,7 @@
                order:2},
              { name: "Blub" ,
                order:3},
-             { name: "Pimmelluf" ,
+             { name: "blub",
                order:4
               },
            ]
@@ -56,5 +56,24 @@
         }
       }
     }
+
+
+    //set svg line
+    $(window).resize(function() {
+
+      var line1 = $('#line1');
+      var el1 = element = document.getElementById('gate');
+      var el2= element = document.getElementById('wsk');
+      var pos1 = el1.getBoundingClientRect();
+      var pos2 = el2.getBoundingClientRect();
+
+      line1.attr('x1',pos1.left).attr('y1',0).attr('x2',pos2.left).attr('y2',0);
+
+    }).resize();
+
+
+
+
+
   }
 })();
