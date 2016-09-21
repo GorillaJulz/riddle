@@ -1,4 +1,8 @@
 <div class='container'>
+    <div class="jumbotron text-center ng-scope">
+        <h1>Cognitive Event-Correlation with IBM OpenWisk</h1>
+
+    </div>
 
     <div class='panel panel-default' ng-repeat='category in cont.categories' gm-on-drop='cont.getDropHandler(category)'>
         <div class='panel-heading'>
@@ -7,9 +11,9 @@
         <div class="row" style='height:65px'>
             <div class="col-md-12">
                 <div class="col-md-3 " ng-repeat='item in category.items'>
-                    <span ng-style="{width: 100+'%'}" style=" margin:10px" class="btn btn-info btn-lg " gm-draggable='{ category: category, item: item }'>
-             {{item.name}}
-           </span>
+                    <span ng-style="{width: 100+'%'}" style=" margin:10px" class="btn btn-primary btn-lg " gm-draggable='{ category: category, item: item }'>
+                      {{item.name}}
+                    </span>
                 </div>
 
             </div>
@@ -17,27 +21,21 @@
     </div>
 
 
-
-
-
-
-
     <div class="row">
-        <div class="col-xs-12">
-
-            <svg width="100%" height="2" style="position: absolute; z-index: 1; top: 80px;">
-  <line id="line1" stroke="#5184AF" stroke-width="20" stroke-linecap="round" stroke-dasharray="1, 30"/>
+        <div class="col-md-12">
 
 
-        </svg>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="2" style="position: absolute; z-index: 1; top: 80px;" xml:space="preserve">
+
+            <path id="line1"   class="path" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-miterlimit="10" d="M55, 0 H800 0"/>
+
+          </svg>
             <div class="row">
 
                 <div class="col-md-2" style=" z-index:3;">
                     <div id="gate" class="btn btn-danger" style="width: 100%; height: 110px;">
                         Gateway
                     </div>
-
-
                 </div>
 
                 <div class="col-md-8 ">
@@ -46,12 +44,18 @@
                             <span class='panel-title'>The Bus</span>
                         </div>
                         <div class="row " style='height:65px'>
-                            <div class="col-md-12 ">
-                                <div class="col-md-3 " ng-repeat="item in category.items " style="z-index:3;">
+                            <div class="col-md-12 " style="height:100%">
+                                <div class="col-md-3 " ng-repeat="item in category.items " style="z-index:3; height:100%">
 
-                                    <span ng-style="{width: 100+ '%'} " style=" margin:10px " class="btn btn-info btn-lg " gm-draggable='{ category: category, item: item }'>
-                            {{item.name}}
-                          </span>
+                                    <div class="btn-group" style="width: 100%; margin-top:10px; height:100%">
+                                        <a style="width: 80%; height:65%" class="btn btn-primary btn-lng " gm-draggable='{ category: category, item: item }'>  {{item.name}} </a>
+                                        <a style="width: 20%; height:65% ;" ui-sref="detail({ serviceName: item.name })" class="btn btn-info"><span class="fa fa-pencil fa-3"></span></a>
+
+
+                                    </div>
+
+
+
                                 </div>
                             </div>
 
@@ -71,5 +75,15 @@
 
 
 
-    <script>
-    </script>
+    <style>
+        .path {
+            stroke-dasharray: 20;
+            animation: dash 10s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 1000;
+            }
+        }
+    </style>

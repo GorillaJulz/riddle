@@ -19,10 +19,8 @@
                 }
               }
             }).state('detail', {
-              url: '/detail?serviceName',
+              url: '/detail:id',
               templateUrl: 'components/detail/detail.html',
-              controller: 'detail.ctrl',
-              controllerAs:'detail'
             });
 
       });

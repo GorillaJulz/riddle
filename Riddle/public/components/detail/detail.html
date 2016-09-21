@@ -1,0 +1,26 @@
+<div class="container">
+    <!-- ui-view-anchor -->
+    <div ui-view="">
+        <div class="jumbotron text-center ng-scope">
+            <h1>Best Beattles Albums</h1>
+            <p>
+                This page demonstrates
+                <span class="text-danger">a list of data</span> and
+                <span class="text-danger">extremely simple dependent detail-views of that data</span>
+            </p>
+        </div>
+        <!-- ui-view-anchor -->
+        <div ui-view="" class="ng-scope">
+            <div class="nav ng-scope">
+                <a href="#/struct">Back to workflow</a>
+            </div>
+            <!-- ngRepeat: album in albums | filter: {id: thisAlbum} -->
+            <div ng-repeat="album in albums | filter: {id: thisAlbum}" class="albumDetail ng-scope">
+                <h2 class="ng-binding">Please Please Me (Mono)</h2>
+                <span class="ng-binding">1963-03-22</span>
+                <p class="ng-binding">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <!-- end ngRepeat: album in albums | filter: {id: thisAlbum} -->
+        </div>
+    </div>
+</div>
