@@ -16,10 +16,9 @@
 
                         <div class="col-md-12 col-sm-12 ">
                             <div class="col-md-3 col-sm-3  " ng-repeat='item in category.items'>
-                                <span style="width:100%; margin:10px" class="btn btn-primary" gm-draggable='{ category: category, item: item }' title="Drag me to the Pipeline!">
+                                <span style="width:100%; margin:10px" class="btn btn-primary" gm-draggable='{ category: category, item: item }'>
                             {{item.name}}
                           </span>
-
                             </div>
 
                         </div>
@@ -35,7 +34,7 @@
         <div class="col-md-12">
 
 
-            <svg ng-style="cont.svgStyle" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="2" style="position: absolute; z-index: 1; top: 45px; display:block;" xml:space="preserve">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="2" style="position: absolute; z-index: 1; top: 80px;" xml:space="preserve">
 
             <path id="line1"   class="path" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-miterlimit="10" d="M55, 0 H800 0"/>
 
@@ -51,7 +50,7 @@
                             </blockquote>
                         </div>
                     </div> -->
-                    <div id="gate" class="btn btn-danger pulse" style="width: 100%; height: 87px; margin-bottom:20px">
+                    <div id="gate" class="btn btn-danger pulse" style="width: 100%; height: 110px; margin-bottom:20px">
                         Gateway
                     </div>
                 </div>
@@ -59,18 +58,16 @@
 
 
                 <div class="col-md-8 ">
-                    <div class='panel bus-container'>
-
+                    <div class='panel panel-default'>
+                        <div class='panel-heading'>
+                            <span class='panel-title'>The Bus</span>
+                        </div>
 
                         <div class="panel-body">
 
 
                             <div class="row">
-
                                 <div ng-repeat='category in cont.categories2' gm-on-drop='cont.getDropHandler(category)'>
-
-                                    <!-- <div ng-show="!cont.categories2.length">No events</div> -->
-                                    <div ng-hide="cont.categories2[0].items.length" style="text-align:center">Pipeline please drag and drop services</div>
                                     <div class="col-md-12 col-sm-12" style="min-height:45px">
                                         <div class="col-md-3 col-sm-3" ng-repeat="item in category.items " style="z-index:3;">
 
@@ -91,7 +88,7 @@
                     </div>
                 </div>
                 <div id="wsk" class="col-md-2 " style=" z-index:3;">
-                    <div class="btn btn-danger pulse" style="width: 100%; height: 87px; margin-bottom:20px ">
+                    <div class="btn btn-danger pulse" style="width: 100%; height: 110px; margin-bottom:20px ">
                         Whysk
                     </div>
                 </div>
@@ -105,11 +102,6 @@
 <style>
     body {
         background-color: #4b515d;
-    }
-
-    .bus-container {
-        background-color: transparent;
-        border: 2px dashed #fff;
     }
 
     .pulse {

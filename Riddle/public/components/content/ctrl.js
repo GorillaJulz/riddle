@@ -13,7 +13,7 @@
          // on init fill the ul
          var result = JSON.parse(localStorage.getItem("services"));
          var result2 = JSON.parse(localStorage.getItem("bus"));
-         if(result != null) {
+         if(result !== null) {
 
 
                  cont.categories = result;
@@ -45,9 +45,26 @@
                }
              ];
 
-             };
+             }
 
 
+
+
+    cont.checkSvg= function() {
+      angular.forEach(cont.categories2, function(categorie2, key) {
+        if(categorie2.items.length==0){
+            cont.svgStyle = {
+              'display':'none',
+            };
+        }else {
+            cont.svgStyle = {
+            'display':'block',
+            };
+        };
+      });
+    }
+
+    cont.checkSvg();
     cont.getDropHandler = function(category) {
 
 
@@ -56,6 +73,10 @@
 
           dragOb.category.items.splice(dragOb.category.items.indexOf(dragOb.item), 1);
           category.items.push(dragOb.item);
+
+
+          cont.checkSvg();
+
 
                     // update the result array
                     var result = JSON.parse(localStorage.getItem("services"));
