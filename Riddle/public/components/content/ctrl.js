@@ -29,9 +29,9 @@
                      order:1},
                    { name: "Filter" ,
                      order:2},
-                   { name: "Blub" ,
+                   { name: "ModuleA" ,
                      order:3},
-                   { name: "blub",
+                   { name: "ModuleB",
                      order:4
                     },
                  ]
@@ -46,27 +46,6 @@
              ];
 
              };
-
-
-
-
-    cont.onHover = function(item) {
-      return function(dragItem, mouseEvent) {
-        if(item != dragItem)
-          dragItem.order = item.order + ((mouseEvent.movementY || -1) > 0 ? 0.5 : -0.5);
-      }
-    }
-
-    cont.reorder = function() {
-			var _orderedItems = $filter('orderBy')(cont.orderedItems, 'order');
-			for(var i = 0; i < _orderedItems.length; i++) {
-				_orderedItems[i].number = _orderedItems[i].order = i + 1;
-			}
-		}
-
-		cont.reset = function(droppedItem) {
-			droppedItem.order = droppedItem.number;
-		}
 
 
     cont.getDropHandler = function(category) {
