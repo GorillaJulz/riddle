@@ -11,6 +11,17 @@
                    console.log(detail.greeting);
                });
 
+             detail.items = [];
+
+             detail.add = function () {
+               console.log(detail.items);
+               detail.items.push({
+                 inlineChecked: false,
+                 question: "",
+                 questionPlaceholder: "Parameter Name",
+                 text: ""
+               });
+             };
 
         detail.serviceName = $stateParams.serviceName;
         detail.param1 = $stateParams.param1;
