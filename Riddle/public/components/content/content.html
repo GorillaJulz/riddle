@@ -1,13 +1,13 @@
-<div class='container'>
-    <div class="jumbotron text-center ng-scope">
-        <h1>Cognitive Event-Correlation with IBM OpenWhisk</h1>
-
-    </div>
-
-    <div class="panel panel-default">
-        <div class="panel-heading">Microservices</div>
-        <div class="panel-body">
-
+<div class="navbar navbar-static-top" style="background-color:#1A242D;">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-nav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+        </div>
+        <div class="collapse navbar-collapse main-nav">
 
             <div class="row">
                 <div ng-repeat='category in cont.categories' gm-on-drop='cont.getDropHandler(category)'>
@@ -16,9 +16,9 @@
 
                         <div class="col-md-12 col-sm-12 ">
                             <div class="col-md-3 col-sm-3  " ng-repeat='item in category.items'>
-                                <span style="width:100%; margin:10px" class="btn btn-primary" gm-draggable='{ category: category, item: item }' title="Drag me to the Pipeline!">
-                            {{item.name}}
-                          </span>
+                                <span style="width:100%; margin:10px; " class=" actionButton" gm-draggable='{ category: category, item: item }' title="Drag me to the Pipeline!">
+                              {{item.name}}
+                            </span>
 
                             </div>
 
@@ -29,7 +29,10 @@
 
         </div>
     </div>
+</div>
 
+
+<div class=''>
 
 
     <div class="row">
@@ -52,7 +55,7 @@
                             </blockquote>
                         </div>
                     </div> -->
-                    <div id="gate" class="btn btn-danger pulse" style="width: 100%; height: 87px; margin-bottom:20px">
+                    <div id="gate" class=" gateButton pulse" style="width: 100%; height: 87px; margin-bottom:20px">
                         Gateway
                     </div>
                 </div>
@@ -71,14 +74,14 @@
                                 <div ng-repeat='category in cont.categories2' gm-on-drop='cont.getDropHandler(category)'>
 
                                     <!-- <div ng-show="!cont.categories2.length">No events</div> -->
-                                    <div ng-hide="cont.categories2[0].items.length" style="text-align:center">Pipeline please drag and drop services</div>
+                                    <div ng-hide="cont.categories2[0].items.length" style="text-align:center; color: white;">Pipeline please drag and drop services</div>
                                     <div class="col-md-12 col-sm-12" style="min-height:45px">
                                         <div class="col-md-3 col-sm-3" ng-repeat="item in category.items " style="z-index:3;">
 
                                             <div class="btn-group btn-group-justified" style="margin:10px">
 
-                                                <a class="btn btn-primary " gm-draggable='{ category: category, item: item }'>  {{item.name}} </a>
-                                                <a ui-sref="detail({ serviceName: item.name })" class="btn btn-info"><span class="fa fa-pencil fa-3"></span></a>
+                                                <a class=" actionButton" gm-draggable='{ category: category, item: item }'>  {{item.name}} </a>
+                                                <a ui-sref="detail({ serviceName: item.name })" class=" actionButton"><span class="fa fa-pencil fa-3"></span></a>
 
                                             </div>
 
@@ -92,7 +95,7 @@
                     </div>
                 </div>
                 <div id="wsk" class="col-md-2 " style=" z-index:3;">
-                    <div class="btn btn-danger pulse" style="width: 100%; height: 87px; margin-bottom:20px ">
+                    <div class=" gateButton pulse" style="width: 100%; height: 87px; margin-bottom:20px;">
                         OpenWhisk
                     </div>
                 </div>
@@ -102,10 +105,6 @@
 
 </div>
 <style>
-    body {
-        background-color: #4b515d;
-    }
-
     .bus-container {
         background-color: transparent;
         border: 2px dashed #fff;
@@ -121,28 +120,29 @@
 
     @-webkit-keyframes pulse {
         0% {
-            -webkit-box-shadow: 0 0 0 0 rgba(244, 67, 45, 0.7);
+            -webkit-box-shadow: 0 0 0 0 rgba(0, 184, 159, 0.51);
         }
         70% {
-            -webkit-box-shadow: 0 0 0 10px rgba(244, 67, 45, 0.7);
+            -webkit-box-shadow: 0 0 0 10px rgba(0, 184, 159, 0.51);
         }
         100% {
-            -webkit-box-shadow: 0 0 0 0 rgba(244, 67, 45, 0.7);
+            -webkit-box-shadow: 0 0 0 0 rgba(0, 184, 159, 0.51);
         }
     }
 
     @keyframes pulse {
         0% {
-            -moz-box-shadow: 0 0 0 0 rgba(244, 67, 45, 0.7);
-            box-shadow: 0 0 0 0 rgba(244, 67, 45, 0.7);
+            -moz-box-shadow: 0 0 0 0 rgba(0, 184, 159, 0.51);
+            box-shadow: 0 0 0 0 rgba(0, 184, 159, 0.51);
         }
         50% {
-            -moz-box-shadow: 0 0 0 5px rgba(244, 67, 45, 0.7);
-            box-shadow: 0 0 0 5px rgba(244, 67, 45, 0.7);
+            -moz-box-shadow: 0 0 0 5px rgba(0, 184, 159, 0.51);
+            box-shadow: 0 0 0 5px rgba(0, 184, 159, 0.51);
         }
         100% {
-            -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
-            box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+            -moz-box-shadow: 0 0 0 10px rgba(0, 184, 159, 0.51);
+            box-shadow: 0 0 0 10px rgba(0, 184, 159, 0.58);
+            border-radius: 2px;
         }
     }
 
@@ -155,5 +155,59 @@
         to {
             stroke-dashoffset: 1000;
         }
+    }
+
+    .actionButton {
+        text-align: center;
+        text-transform: uppercase;
+        background: #5eacf7;
+        color: #26333e;
+        font-size: 14px;
+        cursor: pointer;
+        height: 40px;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        -o-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+
+    .gateButton {
+        text-align: center;
+        text-transform: uppercase;
+        background: #00B299;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+        height: 40px;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        -o-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        font-weight: 700;
     }
 </style>

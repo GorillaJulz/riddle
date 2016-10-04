@@ -5,7 +5,7 @@
 
       function detailCtrl($stateParams, $http) {
         var detail = this;
-        $http.get('https://gist.githubusercontent.com/border/775526/raw/b921df18ba00262ab5bba8cadb3c178e1f7748f7/config.json').
+        $http.get('http://riddle-api.mybluemix.net/api/v1/filter').
                then(function(response) {
                    detail.greeting = response.data;
                    console.log(detail.greeting);
