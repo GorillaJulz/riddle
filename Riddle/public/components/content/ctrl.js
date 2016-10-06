@@ -1,58 +1,45 @@
- (function () {
+(function () {
    angular
        .module('riddle.content')
        .controller('cont.ctrl', contCtrl);
 
-       function contCtrl() {
+       function contCtrl($http) {
 
          //localStorage.clear();
 
          var cont = this;
-
-
+         var urlUser = 'http://riddle-api.mybluemix.net/api/v1/config/user';
          // on init fill the ul
-         var result = JSON.parse(localStorage.getItem("services"));
-         var result2 = JSON.parse(localStorage.getItem("bus"));
-         if(result !== null) {
+        //  var result = JSON.parse(localStorage.getItem("services"));
+        //  var result2 = JSON.parse(localStorage.getItem("bus"));
+        var tools=[];
+        var chainTools=[];
+        cont.toolbar = [];
+        cont.chain = [];
 
-
-                 cont.categories = result;
-                 cont.categories2 = result2;
-
-
-
-             }else{
-               cont.categories = [
-               {
-                 items: [
-                   { name: "Omnibus" ,
-                     order:1},
-                   { name: "Filter" ,
-                     order:2},
-                   { name: "ModuleA" ,
-                     order:3},
-                   { name: "ModuleB",
-                     order:4
-                    },
-                 ]
-               }
-             ];
-              cont.categories2 = [
-               {
-                 items: [
-
-                 ]
-               }
-             ];
-
-             }
+        $http.get(urlUser).
+                  then(function(response) {
+                    cont.toolbar = [
+                              {
+                                items:response.data.toolbar
+                              }
+                            ];
+                    cont.chain = [
+                                   {
+                                     items:response.data.chain
+                                   }
+                                 ];
+                  cont.checkSvg();
+                });
 
 
 
 
     cont.checkSvg= function() {
-      angular.forEach(cont.categories2, function(categorie2, key) {
-        if(categorie2.items.length==0){
+
+      angular.forEach(cont.chain, function(chain, key) {
+
+        if(chain.items.length == 0){
             cont.svgStyle = {
               'display':'none',
             };
@@ -62,7 +49,7 @@
             };
         };
       });
-    }
+    };
 
     cont.checkSvg();
     cont.getDropHandler = function(category) {
@@ -78,21 +65,18 @@
           cont.checkSvg();
 
 
-                    // update the result array
-                    var result = JSON.parse(localStorage.getItem("services"));
-                    var result2 = JSON.parse(localStorage.getItem("bus"));
+          var response = {
+                            chain:cont.chain[0].items,
+                            toolbar:cont.toolbar[0].items
+          }
 
-                    if(result == null)
-                        result = null;
+          $http({
+              method: 'POST',
+              url: urlUser,
+              data: response,
+              headers: {'Content-Type': 'application/json'}
+          })
 
-                    if(result2 == null)
-                        result2 = null;
-
-                    result = cont.categories;
-                    result2 = cont.categories2;
-                    // save the new result array
-                    localStorage.setItem("services", JSON.stringify(result));
-                    localStorage.setItem("bus", JSON.stringify(result2));
 
           return true;  // Returning truthy value since we're modifying the view model
         }

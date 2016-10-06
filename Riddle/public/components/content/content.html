@@ -10,13 +10,13 @@
         <div class="collapse navbar-collapse main-nav">
 
             <div class="row">
-                <div ng-repeat='category in cont.categories' gm-on-drop='cont.getDropHandler(category)'>
+                <div ng-repeat='tool in cont.toolbar' gm-on-drop='cont.getDropHandler(tool)'>
                     <div style='min-height:50px'>
 
 
                         <div class="col-md-12 col-sm-12 ">
-                            <div class="col-md-3 col-sm-3  " ng-repeat='item in category.items'>
-                                <span style="width:100%; margin:10px; " class=" actionButton" gm-draggable='{ category: category, item: item }' title="Drag me to the Pipeline!">
+                            <div class="col-md-3 col-sm-3  " ng-repeat='item in tool.items'>
+                                <span style="width:100%; margin:10px; " class=" actionButton" gm-draggable='{ category: tool, item: item }' title="Drag me to the Pipeline!">
                               {{item.name}}
                             </span>
 
@@ -30,7 +30,6 @@
         </div>
     </div>
 </div>
-
 
 <div class=''>
 
@@ -71,16 +70,16 @@
 
                             <div class="row">
 
-                                <div ng-repeat='category in cont.categories2' gm-on-drop='cont.getDropHandler(category)'>
+                                <div ng-repeat='chainItem in cont.chain' gm-on-drop='cont.getDropHandler(chainItem)'>
 
                                     <!-- <div ng-show="!cont.categories2.length">No events</div> -->
-                                    <div ng-hide="cont.categories2[0].items.length" style="text-align:center; color: white;">Pipeline please drag and drop services</div>
+                                    <div ng-hide="cont.chain[0].items.length" style="text-align:center; color: white;">Pipeline please drag and drop services</div>
                                     <div class="col-md-12 col-sm-12" style="min-height:45px">
-                                        <div class="col-md-3 col-sm-3" ng-repeat="item in category.items " style="z-index:3;">
+                                        <div class="col-md-3 col-sm-3" ng-repeat="item in chainItem.items " style="z-index:3;">
 
                                             <div class="btn-group btn-group-justified" style="margin:10px">
 
-                                                <a class=" actionButton" gm-draggable='{ category: category, item: item }'>  {{item.name}} </a>
+                                                <span class=" actionButton" gm-draggable='{ category: chainItem, item: item }'>  {{item.name}} </span>
                                                 <a ui-sref="detail({ serviceName: item.name })" class=" actionButton"><span class="fa fa-pencil fa-3"></span></a>
 
                                             </div>
@@ -104,6 +103,7 @@
     </div>
 
 </div>
+
 <style>
     .bus-container {
         background-color: transparent;
